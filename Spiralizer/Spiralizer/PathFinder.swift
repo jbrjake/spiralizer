@@ -48,11 +48,11 @@ public class PathFinder {
     
     private func respiralize(withWidth width :Int, andHeight height :Int, andOffset offset :Int) {
         
-        if Float(offset) > Float(self.width / 2) {
-            return
-        }
-
-        if Float(offset) > Float(self.height / 2) {
+        guard
+            Float(offset) <= Float(self.width  / 2) &&
+            Float(offset) <= Float(self.height / 2)
+        else {
+            // The path is complete
             return
         }
         
