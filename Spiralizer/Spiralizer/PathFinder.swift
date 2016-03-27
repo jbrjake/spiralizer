@@ -13,6 +13,18 @@ public struct PathPoint {
     let y :Int
 }
 
+extension PathPoint :Equatable {
+    
+}
+
+public func ==(lhs :PathPoint, rhs :PathPoint) -> Bool {
+    return 
+        lhs.x == rhs.x && 
+        lhs.y == rhs.y
+}
+
+
+
 public class PathFinder {
     
     public let width :Int
