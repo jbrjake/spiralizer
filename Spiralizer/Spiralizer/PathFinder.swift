@@ -56,7 +56,7 @@ public class PathFinder {
             return
         }
         
-        if width-offset-1 >= offset {
+        if width-offset-2 >= offset {
             for i in offset...width-offset-2 {
                 pathPoints.append(PathPoint(x: i, y: offset))
             }
