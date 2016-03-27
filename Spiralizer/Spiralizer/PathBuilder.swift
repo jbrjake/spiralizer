@@ -44,12 +44,12 @@ class PathBuilder {
     }
     
     func padPoint(pathPoint :PathPoint) -> CGPoint {
-        // Let's say we're at 0,0
-        // But our boxes are 5x5 (they should always be odd-numbered)
-        // Then if x == 0, paddedX = 0 + 2
-        // And if y == 0, paddedY = 0 + 2
-        
-        return CGPoint(x: pathPoint.x + boxSize / 2, y: pathPoint.y + boxSize / 2)
+        return CGPoint(
+            x: pathPoint.x + calculatePadding(pathPoint.x), 
+            y: pathPoint.y + calculatePadding(pathPoint.y))
     }
     
+    func calculatePadding(ordinate :Int) -> Int {
+        return (ordinate * (self.boxSize)) + Int( round( Float(self.boxSize) / Float(2) ) )
+    }
 }
