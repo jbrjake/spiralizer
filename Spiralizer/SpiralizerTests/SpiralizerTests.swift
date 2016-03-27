@@ -42,6 +42,18 @@ class SpiralizerTests: XCTestCase {
         XCTAssert(path.count == 0 * 1)
         
     }
+    
+    func testSpiral1x1() {
+        
+        let pathFinder = PathFinder(withGridWidth: 1, andGridHeight: 1)
+        let path = pathFinder.pathPoints
+        
+        XCTAssert(path.count == 1 * 1)
+        
+        XCTAssert(path[0] == PathPoint(x: 0, y: 0), "The only point should be at 0,0")
+        
+    }
+
     func testSpiral3x3() {
         let pathFinder = PathFinder(withGridWidth: 3, andGridHeight: 3)
         
