@@ -31,6 +31,8 @@ class PathBuilder {
         self.pathFinder = PathFinder(
             withGridWidth: self.gridWidth, 
             andGridHeight: self.gridHeight)
+        
+        self.buildPath()
     }
     
     func followPath() {
