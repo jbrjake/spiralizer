@@ -99,6 +99,21 @@ class SpiralizerTests: XCTestCase {
 
     }
 
+    func testTwoRows() {
+        let pathFinder = PathFinder(withGridWidth: 3, andGridHeight: 2)
+        let path = pathFinder.pathPoints
+        
+        XCTAssert(path.count == 3 * 2)
+        
+        XCTAssert(path[0] == PathPoint(x: 0, y: 0), "The 1st point should be 0,0")
+        XCTAssert(path[1] == PathPoint(x: 1, y: 0), "The 2nd point should be 1,0")
+        XCTAssert(path[2] == PathPoint(x: 2, y: 0), "The 3rd point should be 2,0")
+        XCTAssert(path[3] == PathPoint(x: 2, y: 1), "The 3rd point should be 2,1")
+        XCTAssert(path[4] == PathPoint(x: 1, y: 1), "The 4th point should be 1,1")
+        XCTAssert(path[5] == PathPoint(x: 0, y: 1), "The 5th point should be 0,1")
+        
+    }
+
     func testOneColumn() {
         let pathFinder = PathFinder(withGridWidth: 1, andGridHeight: 3)
         let path = pathFinder.pathPoints

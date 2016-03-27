@@ -60,7 +60,7 @@ public class PathFinder {
         let endTopLine      = width - offset - 2
         let topLineY        = offset
         
-        if endTopLine >= startTopLine {
+        if endTopLine >= startTopLine && offset < self.height - offset {
             for topLineX in startTopLine...endTopLine {
                 pathPoints.append(PathPoint(x: topLineX, y: topLineY))
             }
