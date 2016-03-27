@@ -50,8 +50,6 @@ class SpiralizerTests: XCTestCase {
     }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
     func testOneRow() {
         let pathFinder = PathFinder(withGridWidth: 3, andGridHeight: 1)
         let path = pathFinder.pathPoints
@@ -74,10 +72,6 @@ class SpiralizerTests: XCTestCase {
         XCTAssert(path[1] == PathPoint(x: 0, y: 1), "The 2nd point should be 1,0")
         XCTAssert(path[2] == PathPoint(x: 0, y: 2), "The 3rd point should be 2,0")
         
-    }
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
     }
     
 }
