@@ -19,6 +19,30 @@ class SpiralizerTests: XCTestCase {
         super.tearDown()
     }
         
+    func testSpiralNeg1x1() {
+        let pathFinder = PathFinder(withGridWidth: -1, andGridHeight: 1)
+        let path = pathFinder.pathPoints
+        
+        XCTAssert(path.count == 0)
+        
+    }
+    
+    func testSpiral1xNeg1() {
+        let pathFinder = PathFinder(withGridWidth: 1, andGridHeight: -1)
+        let path = pathFinder.pathPoints
+        
+        XCTAssert(path.count == 0)
+        
+    }
+
+    func testSpiralNeg1xNeg1() {
+        let pathFinder = PathFinder(withGridWidth: -1, andGridHeight: -1)
+        let path = pathFinder.pathPoints
+        
+        XCTAssert(path.count == 0)
+        
+    }
+
     func testSpiral0x0() {
         let pathFinder = PathFinder(withGridWidth: 0, andGridHeight: 0)
         let path = pathFinder.pathPoints
