@@ -48,28 +48,36 @@ public class PathFinder {
     
     private func respiralize(withWidth width :Int, andHeight height :Int, andOffset offset :Int) {
         
-        if offset >= self.width / 2 {
+        if Float(offset) > Float(self.width / 2) {
             return
         }
 
-        if offset >= self.height / 2 {
+        if Float(offset) > Float(self.height / 2) {
             return
         }
         
-        for i in offset...width-offset-1 {
-            pathPoints.append(PathPoint(x: i, y: offset))
+        if width-offset-1 >= offset {
+            for i in offset...width-offset-2 {
+                pathPoints.append(PathPoint(x: i, y: offset))
+            }
         }
         
-        for i in offset+1...height-offset-1 {
-            pathPoints.append(PathPoint(x: width-offset-1, y: i))
+        if height-offset-2 >= offset+1 {
+            for i in offset+1...height-offset-2 {
+                pathPoints.append(PathPoint(x: width-offset-2, y: i))
+            }
         }
         
-        for i in (offset...width-offset-1).reverse() {
-            pathPoints.append(PathPoint(x: i, y: height-offset))
+        if width-offset-3 >= offset {
+            for i in (offset...width-offset-3).reverse() {
+                pathPoints.append(PathPoint(x: i, y: height-offset-2))
+            }
         }
         
-        for i in (offset...height-1).reverse() {
-            pathPoints.append(PathPoint(x: offset, y: i))
+        if height-offset-3 >= offset+1 {
+            for i in (offset+1...height-offset-3).reverse() {
+                pathPoints.append(PathPoint(x: offset, y: i))
+            }
         }
         
         respiralize(withWidth: width, andHeight: height, andOffset: offset+1)
