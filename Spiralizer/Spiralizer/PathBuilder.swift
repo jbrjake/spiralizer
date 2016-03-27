@@ -35,7 +35,7 @@ class PathBuilder {
         self.buildPath()
     }
     
-    func followPath() {
+    private func buildPath() {
         let paddedPoints = pathFinder.pathPoints.map { (pathPoint) -> CGPoint in
             return padPoint(pathPoint)
         }
@@ -45,13 +45,13 @@ class PathBuilder {
         }
     }
     
-    func padPoint(pathPoint :PathPoint) -> CGPoint {
+    internal func padPoint(pathPoint :PathPoint) -> CGPoint {
         return CGPoint(
             x: pathPoint.x + calculatePadding(pathPoint.x), 
             y: pathPoint.y + calculatePadding(pathPoint.y))
     }
     
-    func calculatePadding(ordinate :Int) -> Int {
+    private func calculatePadding(ordinate :Int) -> Int {
         return (ordinate * (self.boxSize)) + Int( round( Float(self.boxSize) / Float(2) ) )
     }
 }
