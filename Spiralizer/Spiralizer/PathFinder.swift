@@ -56,27 +56,43 @@ public class PathFinder {
             return
         }
         
-        if width-offset-2 >= offset {
-            for i in offset...width-offset-2 {
-                pathPoints.append(PathPoint(x: i, y: offset))
+        let startTopLine    = offset
+        let endTopLine      = width - offset - 2
+        let topLineY        = offset
+        
+        if endTopLine >= startTopLine {
+            for topLineX in startTopLine...endTopLine {
+                pathPoints.append(PathPoint(x: topLineX, y: topLineY))
             }
         }
         
-        if height-offset-2 >= offset+1 {
-            for i in offset+1...height-offset-2 {
-                pathPoints.append(PathPoint(x: width-offset-2, y: i))
+        let startRightLine  = offset + 1
+        let endRightLine    = height - offset - 2
+        let rightLineX      = width  - offset - 2
+        
+        if endRightLine >= startRightLine {
+            for rightLineY in startRightLine...endRightLine {
+                pathPoints.append(PathPoint(x: rightLineX, y: rightLineY))
             }
         }
         
-        if width-offset-3 >= offset {
-            for i in (offset...width-offset-3).reverse() {
-                pathPoints.append(PathPoint(x: i, y: height-offset-2))
+        let startBottomLine = width  - offset - 3
+        let endBottomLine   = offset
+        let bottomLineY     = height - offset - 2
+
+        if startBottomLine >= endBottomLine {
+            for bottomLineX in (endBottomLine...startBottomLine).reverse() {
+                pathPoints.append(PathPoint(x: bottomLineX, y: bottomLineY))
             }
         }
         
-        if height-offset-3 >= offset+1 {
-            for i in (offset+1...height-offset-3).reverse() {
-                pathPoints.append(PathPoint(x: offset, y: i))
+        let startLeftLine   = height - offset - 3
+        let endLeftLine     = offset + 1
+        let leftLineX       = offset
+        
+        if startLeftLine >= endLeftLine {
+            for leftLineY in (endLeftLine...startLeftLine).reverse() {
+                pathPoints.append(PathPoint(x: leftLineX, y: leftLineY))
             }
         }
         
