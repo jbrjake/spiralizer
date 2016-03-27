@@ -144,6 +144,12 @@ class SpiralizerTests: XCTestCase {
 
     }
     
+    func testSpiral9x9() {
+        let pathFinder = PathFinder(withGridWidth: 9, andGridHeight: 9)
+        
+        let path = pathFinder.pathPoints
+        
+        XCTAssert(path.count == 9 * 9, "There should be a point for each square in the grid.")
     }
     
     func testOneRow() {
