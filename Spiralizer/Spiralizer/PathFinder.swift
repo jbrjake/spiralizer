@@ -80,7 +80,7 @@ public class PathFinder {
         let endBottomLine   = offset
         let bottomLineY     = height - offset - 2
 
-        if startBottomLine >= endBottomLine {
+        if startBottomLine >= endBottomLine && self.height > 1{
             for bottomLineX in (endBottomLine...startBottomLine).reverse() {
                 pathPoints.append(PathPoint(x: bottomLineX, y: bottomLineY))
             }
@@ -90,14 +90,13 @@ public class PathFinder {
         let endLeftLine     = offset + 1
         let leftLineX       = offset
         
-        if startLeftLine >= endLeftLine {
+        if startLeftLine >= endLeftLine && self.width > 1 {
             for leftLineY in (endLeftLine...startLeftLine).reverse() {
                 pathPoints.append(PathPoint(x: leftLineX, y: leftLineY))
             }
         }
         
         respiralize(withWidth: width, andHeight: height, andOffset: offset+1)
-        
     }
     
     
