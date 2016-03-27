@@ -14,6 +14,7 @@
 		7423F9AF1CA6FF5500081AF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7423F9AD1CA6FF5500081AF9 /* LaunchScreen.storyboard */; };
 		7423F9BA1CA6FF5500081AF9 /* SpiralizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7423F9B91CA6FF5500081AF9 /* SpiralizerTests.swift */; };
 		7423F9C71CA7001100081AF9 /* PathFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7423F9C61CA7001100081AF9 /* PathFinder.swift */; };
+		7423F9C91CA851A800081AF9 /* PathBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7423F9C81CA851A800081AF9 /* PathBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		7423F9B91CA6FF5500081AF9 /* SpiralizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiralizerTests.swift; sourceTree = "<group>"; };
 		7423F9BB1CA6FF5500081AF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7423F9C61CA7001100081AF9 /* PathFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathFinder.swift; sourceTree = "<group>"; };
+		7423F9C81CA851A800081AF9 /* PathBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				7423F9A41CA6FF5500081AF9 /* AppDelegate.swift */,
 				7423F9A61CA6FF5500081AF9 /* ViewController.swift */,
 				7423F9C61CA7001100081AF9 /* PathFinder.swift */,
+				7423F9C81CA851A800081AF9 /* PathBuilder.swift */,
 				7423F9A81CA6FF5500081AF9 /* Main.storyboard */,
 				7423F9AB1CA6FF5500081AF9 /* Assets.xcassets */,
 				7423F9AD1CA6FF5500081AF9 /* LaunchScreen.storyboard */,
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7423F9C91CA851A800081AF9 /* PathBuilder.swift in Sources */,
 				7423F9A71CA6FF5500081AF9 /* ViewController.swift in Sources */,
 				7423F9A51CA6FF5500081AF9 /* AppDelegate.swift in Sources */,
 				7423F9C71CA7001100081AF9 /* PathFinder.swift in Sources */,
@@ -392,6 +396,7 @@
 				7423F9C01CA6FF5500081AF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7423F9C11CA6FF5500081AF9 /* Build configuration list for PBXNativeTarget "SpiralizerTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +405,7 @@
 				7423F9C31CA6FF5500081AF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
