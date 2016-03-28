@@ -80,7 +80,7 @@ public class PathFinder {
         let endBottomLine   = offset
         let bottomLineY     = height - offset - 2
 
-        if startBottomLine >= endBottomLine && self.height > 1{
+        if startBottomLine >= endBottomLine && topLineY != bottomLineY {
             for bottomLineX in (endBottomLine...startBottomLine).reverse() {
                 pathPoints.append(PathPoint(x: bottomLineX, y: bottomLineY))
             }
@@ -90,7 +90,7 @@ public class PathFinder {
         let endLeftLine     = offset + 1
         let leftLineX       = offset
         
-        if startLeftLine >= endLeftLine && self.width > 1 {
+        if startLeftLine >= endLeftLine && rightLineX != leftLineX {
             for leftLineY in (endLeftLine...startLeftLine).reverse() {
                 pathPoints.append(PathPoint(x: leftLineX, y: leftLineY))
             }

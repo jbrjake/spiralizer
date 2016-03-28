@@ -97,6 +97,38 @@ class PathFinderTests: XCTestCase {
         XCTAssertEqual(path[8], PathPoint(x: 1, y: 1), "The 9th point should be 1,1")
     }
     
+    func testSpiral4x3() {
+        let pathFinder = PathFinder(withGridWidth: 4, andGridHeight: 3)
+        let path = pathFinder.pathPoints
+        
+        XCTAssertEqual(path.count, 4 * 3, "There should be a point for each square in the grid")
+        /*
+        
+                 0    1    2    3
+              ---------------------
+            0 | 00 | 01 | 02 | 03 |
+              ---------------------
+            1 | 09 | 10 | 11 | 04 |
+              ---------------------
+            2 | 08 | 07 | 06 | 05 |
+              ---------------------
+        */
+        
+        XCTAssertEqual(path[0],  PathPoint(x: 0, y: 0), "The 1st  point should be 0,0")
+        XCTAssertEqual(path[1],  PathPoint(x: 1, y: 0), "The 2nd  point should be 1,0")
+        XCTAssertEqual(path[2],  PathPoint(x: 2, y: 0), "The 3rd  point should be 2,0")
+        XCTAssertEqual(path[3],  PathPoint(x: 3, y: 0), "The 4th  point should be 3,0")
+        XCTAssertEqual(path[4],  PathPoint(x: 3, y: 1), "The 5th  point should be 3,1")
+        XCTAssertEqual(path[5],  PathPoint(x: 3, y: 2), "The 6th  point should be 3,2")
+        XCTAssertEqual(path[6],  PathPoint(x: 2, y: 2), "The 7th  point should be 2,2")
+        XCTAssertEqual(path[7],  PathPoint(x: 1, y: 2), "The 8th  point should be 1,2")
+        XCTAssertEqual(path[8],  PathPoint(x: 0, y: 2), "The 9th  point should be 0,2")
+        XCTAssertEqual(path[9],  PathPoint(x: 0, y: 1), "The 10th point should be 0,1")
+        XCTAssertEqual(path[10], PathPoint(x: 1, y: 1), "The 11th point should be 1,1")
+        XCTAssertEqual(path[11], PathPoint(x: 2, y: 1), "The 12th point should be 2,1")
+        
+    }
+    
     func testSpiral4x4() {
         let pathFinder = PathFinder(withGridWidth: 4, andGridHeight: 4)
         let path = pathFinder.pathPoints
