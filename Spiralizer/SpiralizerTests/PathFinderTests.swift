@@ -1,5 +1,5 @@
 //
-//  SpiralizerTests.swift
+//  PathFinderTests.swift
 //  SpiralizerTests
 //
 //  Created by Jonathon Rubin on 3/26/16.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Spiralizer
 
-class SpiralizerTests: XCTestCase {
+class PathFinderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
