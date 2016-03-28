@@ -39,9 +39,17 @@ class PathBuilder {
         let paddedPoints = pathFinder.pathPoints.map { (pathPoint) -> CGPoint in
             return padPoint(pathPoint)
         }
-
+        
+        var setOrigin = false
         for paddedPoint in paddedPoints {
-            CGPathMoveToPoint(self.path, nil, paddedPoint.x, paddedPoint.y)
+            
+            if !setOrigin {
+                CGPathMoveToPoint(self.path, nil, paddedPoint.x, paddedPoint.y)
+                setOrigin = true
+            }
+            else {
+                CGPathAddLineToPoint(self.path, nil, paddedPoint.x, paddedPoint.y)
+            }
         }
     }
     
